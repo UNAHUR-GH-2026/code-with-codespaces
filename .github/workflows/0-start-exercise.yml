@@ -20,8 +20,8 @@ jobs:
     name: Start Exercise
     uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.8.1
     with:
-      exercise-title: "Code with Codespaces"
-      intro-message: "Let's create a pre-configured environment to simplify development!"
+      exercise-title: "Programando con Codespaces"
+      intro-message: "¡Creemos un entorno pre configurado para simplificar el desarrollo!"
 
   post_next_step_content:
     name: Post next step content

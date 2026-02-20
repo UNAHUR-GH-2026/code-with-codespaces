@@ -1,52 +1,52 @@
-## Step 2: Use a custom image in your codespace
+## Paso 2: Usar una image personalizada en el codespace
 
-The didn't specify any configuration for the codespace we just created, so GitHub used a default Docker image. While this is very useful, it won't be consistent and it doesn't version lock our runtime environment. Specifying the configuration is important to keep the development environment repeatable.
+No se especificó ninguna configuración para el codespace que acabamos de crear, por lo que GitHub usó una image de Docker predeterminada. Si bien esto es muy útil, no será consistente y no bloquea la versión de nuestro entorno de ejecución. Especificar la configuración es importante para mantener el entorno de desarrollo repetible.
 
-Let's do that now by providing a specific docker container image.
+Hagamos eso ahora proporcionando una image de container de Docker específica.
 
-### How to configure a Codespace?
+### ¿Cómo configurar un Codespace?
 
-Configuration is provided directly in the repository via the `.devcontainer/devcontainer.json`. You can even add multiple configurations!
+La configuración se proporciona directamente en el repository a través del archivo `.devcontainer/devcontainer.json`. ¡Incluso se pueden agregar múltiples configuraciones!
 
-Let's create this file and set a few of the most common settings. For other options like setting configuring VS Code, forwarding ports, and running lifecycle scripts, see the [Codespaces documentation](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces) on GitHub.
+Creemos este archivo y establezcamos algunas de las configuraciones más comunes. Para otras opciones como configurar VS Code, reenviar puertos y ejecutar scripts de ciclo de vida, ver la [documentación de Codespaces](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces) en GitHub.
 
-### ⌨️ Activity: Customize the codespace
+### ⌨️ Actividad: Personalizar el codespace
 
-1. Ensure you are in the VS Code Codespace.
+1. Asegurarse de estar en el Codespace de VS Code.
 
-1. Use the VS Code file explorer to create the configuration file.
+1. Usar el explorador de archivos de VS Code para crear el archivo de configuración.
 
    ```txt
    .devcontainer/devcontainer.json
    ```
 
-   Alternately, run the below terminal command to create it.
+   Alternativamente, ejecutar el siguiente comando de terminal para crearlo.
 
    ```bash
    mkdir -p .devcontainer
    touch .devcontainer/devcontainer.json
    ```
 
-1. Open the `.devcontainer/devcontainer.json` file and add the following content. Let's start with a basic image.
+1. Abrir el archivo `.devcontainer/devcontainer.json` y agregar el siguiente contenido. Comencemos con una image básica.
 
    ```json
    {
      "name": "Basic Dev Environment",
-     "image": "mcr.microsoft.com/devcontainers/base:debian"
+     "image": "mcr.microsoft.com/vscode/devcontainers/base:debian"
    }
    ```
 
-   > 💡 **Tip**: The name is optional but it will help identify the configuration when creating a codespace on GitHub, if there are multiple options.
+   > 💡 **Consejo**: El nombre es opcional pero ayudará a identificar la configuración al crear un codespace en GitHub, si hay múltiples opciones.
 
-1. After saving, VS Code likely popped up a notification that it detected a configuration change. You can **Accept** that option to rebuild the development container or manually use the Command Palette (`CTRL`+`Shift`+`P`) and run the command `Codespaces: Rebuild Container`. Select the **Rebuild** option. A full build is not necessary.
+1. Después de guardar, VS Code probablemente mostró una notificación indicando que detectó un cambio de configuración. Se puede **Aceptar** esa opción para reconstruir el container de desarrollo o manualmente usar la Paleta de Comandos (Command Palette) (`CTRL`+`Shift`+`P`) y ejecutar el comando `Codespaces: Rebuild Container`. Seleccionar la opción **Rebuild** (Reconstruir). No es necesaria una construcción completa.
 
    <img width="350" alt="rebuild codespace command" src="../images/rebuild-codespace-command.png"/>
 
-1. Wait a few minutes for the Codespace to rebuild and VS Code to reconnect.
+1. Esperar unos minutos para que el Codespace se reconstruya y VS Code se reconecte.
 
-1. Expand the lower panel and select the **TERMINAL** tab.
+1. Expandir el panel inferior y seleccionar la pestaña **TERMINAL**.
 
-1. Use the following command to check the tool versions again. Notice that none are installed now!
+1. Usar el siguiente comando para verificar las versiones de las herramientas nuevamente. ¡Notar que ahora ninguna está instalada!
 
    ```bash
    node --version
@@ -55,7 +55,7 @@ Let's create this file and set a few of the most common settings. For other opti
    gh --version
    ```
 
-1. ⚠️ There is currently a bug with Codespaces that expects [Git-LFS](https://git-lfs.com/) to be installed. Run the following command to remove the affected Git hooks.
+1. ⚠️ Actualmente hay un bug con Codespaces que espera que [Git-LFS](https://git-lfs.com/) esté instalado. Ejecutar el siguiente comando para eliminar los hooks de Git afectados.
 
    ```bash
    rm .git/hooks/post-checkout
@@ -64,7 +64,7 @@ Let's create this file and set a few of the most common settings. For other opti
    rm .git/hooks/pre-push
    ```
 
-1. With our new configuration verified, let's commit the changes. Use VS Code's source control tools or the below terminal command.
+1. Con nuestra nueva configuración verificada, hagamos commit de los cambios. Usar las herramientas de control de código de VS Code o el siguiente comando de terminal.
 
    ```bash
    git add '.devcontainer/devcontainer.json'
@@ -72,4 +72,4 @@ Let's create this file and set a few of the most common settings. For other opti
    git push
    ```
 
-1. With our dev container configuration committed, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.
+1. Con nuestra configuración de dev container confirmada, Mona comenzará a revisar el trabajo. Darle un momento para proporcionar retroalimentación y los siguientes pasos de aprendizaje.

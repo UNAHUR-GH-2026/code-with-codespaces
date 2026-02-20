@@ -1,23 +1,23 @@
-## Review
+## Revisión
 
 <img src="https://octodex.github.com/images/welcometocat.png" alt=celebrate width=300 align=right>
 
-Here's a recap of all the tasks you've accomplished in your repository:
+Aquí hay un resumen de todas las tareas que se han completado en el repository:
 
-- You learned how to create a codespace and push code to your repository from the codespace.
-- You learned how to use custom images, features, extensions, and scripts in your codespace.
-- You learned how to test run it like an onboarding developer.
+- Se aprendió cómo crear un codespace y enviar código al repository desde el codespace.
+- Se aprendió cómo usar images personalizadas, features, extensiones y scripts en el codespace.
+- Se aprendió cómo probarlo ejecutándolo como un desarrollador que se incorpora.
 
-### Additional learning and resources
+### Aprendizaje y recursos adicionales
 
-- [Developing in a codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/developing-in-a-codespace). Learn how to delete a codespace, open an existing codespace, connect to a private network, forward ports, and much more.
-- [Set up your repository](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers). Learn how to set minimum machine specs for a codespace, add badges, set up a template repo, and much more.
-- [Personalize and customize GitHub Codespaces](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account). Learn how to use setting sync for your codespace, add dotfiles, set the default region, set the default editor, and much more.
-- [Prebuild your codespace](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/about-github-codespaces-prebuilds)
-- [Manage your codespace](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/enabling-github-codespaces-for-your-organization)
+- [Desarrollar en un codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/developing-in-a-codespace). Aprender cómo eliminar un codespace, abrir un codespace existente, conectarse a una red privada, reenviar puertos y mucho más.
+- [Configurar el repository](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/introduction-to-dev-containers). Aprender cómo establecer especificaciones mínimas de máquina para un codespace, agregar badges, configurar un repository de plantilla y mucho más.
+- [Personalizar GitHub Codespaces](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account). Aprender cómo usar la sincronización de configuración para el codespace, agregar dotfiles, establecer la región predeterminada, establecer el editor predeterminado y mucho más.
+- [Preconstruir el codespace](https://docs.github.com/en/codespaces/prebuilding-your-codespaces/about-github-codespaces-prebuilds)
+- [Administrar el codespace](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/enabling-github-codespaces-for-your-organization)
 
-### What's next?
+### ¿Qué sigue?
 
-- [Take another GitHub Skill exercise](https://github.com/skills).
-- [Read the Get started with GitHub docs](https://docs.github.com/en/get-started).
-- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
+- [Realizar otro ejercicio de GitHub Skills](https://github.com/skills).
+- [Leer la documentación de inicio de GitHub](https://docs.github.com/en/get-started).
+- Para encontrar proyectos en los que contribuir, revisar [GitHub Explore](https://github.com/explore).

@@ -1,12 +1,12 @@
-## Step 3: Add Features
+## Paso 3: Agregar Features
 
-You can further customize your codespace by adding container feature, VS Code extensions, VS Code settings, host requirements, and much more.
+Se puede personalizar aún más el codespace agregando features de container, extensiones de VS Code, configuraciones de VS Code, requisitos del host y mucho más.
 
-Let's add the GitHub CLI, extensions to run the python program using VS Code, and a custom script to install some packages when first creating the Codespace.
+Agreguemos el GitHub CLI, extensiones para ejecutar el programa python usando VS Code, y un script personalizado para instalar algunos paquetes al crear el Codespace por primera vez.
 
-### ⌨️ Activity: Add support for the Python
+### ⌨️ Actividad: Agregar soporte para Python
 
-1. In VS Code, open the Command Palette (`CTRL`+`SHIFT`+`P`) and select the below command.
+1. En VS Code, abrir la Paleta de Comandos (Command Palette) (`CTRL`+`SHIFT`+`P`) y seleccionar el siguiente comando.
 
    ```txt
    Codespaces: Add Dev Container Configuration Files...
@@ -14,17 +14,17 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
 
    <img width="350" alt="vs code configure dev container command" src="../images/configure-dev-container-command.png" />
 
-1. Select the option `Modify your active configuration...`.
+1. Seleccionar la opción `Modify your active configuration...`.
 
-1. In the list of features, search for and select `Python` from `devcontainers`.
+1. En la lista de features, buscar y seleccionar `Python` de `devcontainers`.
 
-   - Instead of the defaults, pick `Configure Options`.
-   - Leave `Install Tools` set to `true`.
-   - Select Python version: `3.10`
+   - En lugar de los valores predeterminados, elegir `Configure Options`.
+   - Dejar `Install Tools` configurado en `true`.
+   - Seleccionar versión de Python: `3.10`
 
-1. Navigate to and open the `.devcontainer/devcontainer.json` file.
+1. Navegar y abrir el archivo `.devcontainer/devcontainer.json`.
 
-1. Verify a new entry similar to the below was added.
+1. Verificar que se agregó una nueva entrada similar a la siguiente.
 
    ```json
    "features": {
@@ -35,23 +35,23 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
    },
    ```
 
-### ⌨️ Activity: Add VS Code extensions
+### ⌨️ Actividad: Agregar extensiones de VS Code
 
-1. In the left navigation, select the **Extension** tab.
+1. En la navegación izquierda, seleccionar la pestaña **Extension** (Extensiones).
 
    <img width="200" alt="vs code extensions tab" src="../images/vs-code-extensions-tab.png" />
 
-1. Search for `python` and find entries for `Python` and `Python Debugger`.
+1. Buscar `python` y encontrar las entradas para `Python` y `Python Debugger`.
 
    <img width="250" alt="python extensions for vs code" src="../images/python-extensions.png" />
 
-1. Right click on each entry and select the `Add to devcontainer.json` option.
+1. Hacer clic derecho en cada entrada y seleccionar la opción `Add to devcontainer.json`.
 
    <img width="250" alt="add to devcontainer config button" src="../images/add-to-devcontainer-button.png" />
 
-1. Navigate to and open the `.devcontainer/devcontainer.json` file.
+1. Navegar y abrir el archivo `.devcontainer/devcontainer.json`.
 
-1. Verify a new entry similar to the below was added.
+1. Verificar que se agregó una nueva entrada similar a la siguiente.
 
    ```json
    "customizations": {
@@ -64,29 +64,29 @@ Let's add the GitHub CLI, extensions to run the python program using VS Code, an
    },
    ```
 
-### ⌨️ Activity: Add a custom script
+### ⌨️ Actividad: Agregar un script personalizado
 
-The Dev Container specification provides multiple locations to run [lifecycle scripts](https://containers.dev/implementors/json_reference/#lifecycle-scripts) to further customize your Codespace. Let's add the `postCreateCommand` which runs one time after initial build (or rebuild).
+La especificación Dev Container proporciona múltiples ubicaciones para ejecutar [scripts de ciclo de vida](https://containers.dev/implementors/json_reference/#lifecycle-scripts) para personalizar aún más el Codespace. Agreguemos el `postCreateCommand` que se ejecuta una sola vez después de la construcción inicial (o reconstrucción).
 
-1. Use the VS Code file explorer to create a script file with the below name.
+1. Usar el explorador de archivos de VS Code para crear un archivo de script con el siguiente nombre.
 
    ```txt
    .devcontainer/postCreate.sh
    ```
 
-   Alternately, run the below terminal command to create it.
+   Alternativamente, ejecutar el siguiente comando de terminal para crearlo.
 
    ```bash
    touch .devcontainer/postCreate.sh
    ```
 
-1. Make the script executable by running the below terminal command.
+1. Hacer el script ejecutable ejecutando el siguiente comando de terminal.
 
    ```bash
    chmod +x .devcontainer/postCreate.sh
    ```
 
-1. Open the `.devcontainer/postCreate.sh` file and add the following code, which will install an animation of a steam locomotive.
+1. Abrir el archivo `.devcontainer/postCreate.sh` y agregar el siguiente código, que instalará una animación de una locomotora de vapor.
 
    ```bash
    #!/bin/bash
@@ -97,15 +97,15 @@ The Dev Container specification provides multiple locations to run [lifecycle sc
    echo "export PATH=\$PATH:/usr/games" >> ~/.zshrc
    ```
 
-1. Navigate to and open the `.devcontainer/devcontainer.json` file.
+1. Navegar y abrir el archivo `.devcontainer/devcontainer.json`.
 
-1. Create the `postCreateCommand` entry at the same level (_top level_) as `features`, and `customizations`.
+1. Crear la entrada `postCreateCommand` al mismo nivel (_nivel superior_) que `features` y `customizations`.
 
    ```json
    "postCreateCommand": ".devcontainer/postCreate.sh"
    ```
 
-1. With our new configuration finished, let's commit the changes. Use VS Code's source control tools or the below terminal command.
+1. Con nuestra nueva configuración terminada, hagamos commit de los cambios. Usar las herramientas de control de código de VS Code o el siguiente comando de terminal.
 
    ```shell
    git add '.devcontainer/devcontainer.json'
@@ -114,34 +114,34 @@ The Dev Container specification provides multiple locations to run [lifecycle sc
    git push
    ```
 
-1. Open the VS Code Command Palette (`CTRL`+`Shift`+`P`) and run the `Codespaces: Rebuild Container` command. Select the **Rebuild** option. A full build is not necessary.
+1. Abrir la Paleta de Comandos (Command Palette) de VS Code (`CTRL`+`Shift`+`P`) y ejecutar el comando `Codespaces: Rebuild Container`. Seleccionar la opción **Rebuild** (Reconstruir). No es necesaria una construcción completa.
 
    <img width="350" alt="rebuild codespace command" src="../images/rebuild-codespace-command.png"/>
 
-1. Wait a few minutes for the Codespace to rebuild and VS Code to reconnect.
+1. Esperar unos minutos para que el Codespace se reconstruya y VS Code se reconecte.
 
-1. With the customizations committed, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.
+1. Con las personalizaciones confirmadas, Mona comenzará a revisar el trabajo. Darle un momento para proporcionar retroalimentación y los siguientes pasos de aprendizaje.
 
 > [!TIP]
-> You can also configure your account to [install dotfiles](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account), allowing you to combine personal configurations with the project's configuration.
+> También se puede configurar la cuenta para [instalar dotfiles](https://docs.github.com/en/codespaces/setting-your-user-preferences/personalizing-github-codespaces-for-your-account), permitiendo combinar configuraciones personales con la configuración del proyecto.
 
-### ⌨️ Activity: (optional) Verify our customizations
+### ⌨️ Actividad: (opcional) Verificar nuestras personalizaciones
 
-Now that you've rebuilt the codespace, let's verify the python extension, python version, and custom script were adjusted correctly in the Codespace.
+Ahora que se ha reconstruido el codespace, verifiquemos que la extension de python, la versión de python y el script personalizado se ajustaron correctamente en el Codespace.
 
-1. Ensure you are in the Codespace.
+1. Asegurarse de estar en el Codespace.
 
-1. In the left sidebar, click the extensions tab and verify that the Python extensions are installed and enabled.
+1. En la barra lateral izquierda, hacer clic en la pestaña de extensiones (extensions) y verificar que las extensiones de Python estén instaladas y habilitadas.
 
    <img width="250" alt="python extensions for vs code" src="../images/python-extensions.png" />
 
-1. In the left sidebar, select **Run and Debug** tab and then press the **Start Debugging** icon. VS Code will open the lower panel and show the run logs.
+1. En la barra lateral izquierda, seleccionar la pestaña **Run and Debug** (Ejecutar y Depurar) y luego presionar el icono **Start Debugging** (Iniciar Depuración). VS Code abrirá el panel inferior y mostrará los logs de ejecución.
 
    <img width="250" alt="run and debug tab pointing to start button" src="../images/run-and-debug-start-button.png"/>
 
-1. In the lower panel, switch to the **TERMINAL** tab.
+1. En el panel inferior, cambiar a la pestaña **TERMINAL**.
 
-1. Run the following command to show the installed version of Python. Notice the others are not installed.
+1. Ejecutar el siguiente comando para mostrar la versión instalada de Python. Notar que las otras no están instaladas.
 
    ```bash
    node --version
@@ -150,7 +150,7 @@ Now that you've rebuilt the codespace, let's verify the python extension, python
    gh --version
    ```
 
-1. Run the following command to show the steam locomotive animation.
+1. Ejecutar el siguiente comando para mostrar la animación de la locomotora de vapor.
 
    ```bash
    sl

@@ -1,62 +1,62 @@
-## Step 1: Start a codespace and push some code
+## Paso 1: Iniciar un codespace y enviar código
 
-### What's the big deal about Codespaces?
+### ¿Cuál es la ventaja de los Codespaces?
 
-A **codespace** is a development environment hosted in the cloud, defined by configuration files in your repository. This creates a repeatable development environment tailored specifically to the project that simplifies developer onboarding and avoids the famous phrase "It works on my machine!" 😎
+Un **codespace** es un entorno de desarrollo alojado en la nube, definido por archivos de configuración en el repository. Esto crea un entorno de desarrollo repetible adaptado específicamente al proyecto, que simplifica la incorporación de desarrolladores y evita la famosa frase "¡Funciona en mi máquina!" 😎
 
-Each codespace follows the [Dev Container specification](https://containers.dev/implementors/spec/) and is hosted by GitHub as a [Docker container](https://code.visualstudio.com/docs/devcontainers/containers).
+Cada codespace sigue la [especificación Dev Container](https://containers.dev/implementors/spec/) y es alojado por GitHub como un [contenedor de Docker](https://code.visualstudio.com/docs/devcontainers/containers).
 
-But don't worry! You don't need to know Docker or even have it installed on your machine!
-
-> [!TIP]
-> Since the Dev Container configuration is part of the repository, you can also use it locally with your own Docker host. Nice!
-
-A Codespace has several advantages/features compared to local development. To name a few:
-
-- Start a codespace directly from the repository page.
-- Develop in the browser. No IDE installation required.
-  - Option to use a local install of VS Code to link to the remote Codespace.
-- Preconfigure everything you need to run the project:
-  - Add **[features](https://containers.dev/features)** to install common development needs.
-  - Run scripts at various steps of the codespace lifecycle _(e.g install python/npm packages)_.
-  - Setup VS Code settings and extensions to match the project needs.
-- Fast internet access (since the container is in the datacenter).
+¡Pero no preocuparse! ¡No es necesario conocer Docker ni siquiera tenerlo instalado en la máquina!
 
 > [!TIP]
-> Codespaces are even useful in short-lived situations like reviewing a pull request. No need to verify you have the right setup to test out the incoming code changes.
+> Dado que la configuración del Dev Container es parte del repository, ¡también se puede usar localmente con el propio host de Docker! ¡Excelente!
 
-Let's get started! We'll start up a Codespace, run the application, make a change, and push it. Like normal development! 🤓
+Un Codespace tiene varias ventajas/características en comparación con el desarrollo local. Por mencionar algunas:
 
-### ⌨️ Activity: Start a codespace
+- Iniciar un codespace directamente desde la página del repository.
+- Desarrollar en el navegador. No se requiere instalación de IDE.
+  - Opción de usar una instalación local de VS Code para conectar al Codespace remoto.
+- Preconfigurar todo lo necesario para ejecutar el proyecto:
+  - Agregar **[features](https://containers.dev/features)** para instalar necesidades comunes de desarrollo.
+  - Ejecutar scripts en varias etapas del ciclo de vida del codespace _(por ejemplo, instalar paquetes python/npm)_.
+  - Configurar ajustes y extensiones de VS Code para coincidir con las necesidades del proyecto.
+- Acceso rápido a internet (ya que el container está en el datacenter).
 
-1. Open a second tab and navigate to this repository. Ensure you are on the **Code** tab.
+> [!TIP]
+> Los Codespaces son incluso útiles en situaciones de corta duración como revisar un pull request. No es necesario verificar que se tenga la configuración correcta para probar los cambios de código entrantes.
 
-1. Above the files list on the right, click the green **<> Code** button.
+¡Comencemos! Iniciaremos un Codespace, ejecutaremos la aplicación, haremos un cambio y lo enviaremos. ¡Como el desarrollo normal! 🤓
+
+### ⌨️ Actividad: Iniciar un codespace
+
+1. Abrir una segunda pestaña y navegar a este repository. Asegurarse de estar en la pestaña **Code** (Código).
+
+1. Sobre la lista de archivos a la derecha, hacer clic en el botón verde **<> Code** (Código).
 
    <img width="300" alt="green code button" src="../images/green-code-button.png" />
 
-1. Select the **Codespaces** tab and click the **Create codespace on main** button. A new window will open running VS Code and it will connect to the remote Codespace. Wait a few minutes for the codespace to be created.
+1. Seleccionar la pestaña **Codespaces** y hacer clic en el botón **Create codespace on main** (Crear codespace en main). Se abrirá una nueva ventana ejecutando VS Code y se conectará al Codespace remoto. Esperar unos minutos para que se cree el codespace.
 
-1. Look in the bottom left of the VS Code window see the remote connection.
+1. Mirar en la parte inferior izquierda de la ventana de VS Code para ver la conexión remota.
 
    <img width="350" alt="remote connection status in VS Code" src="../images/remote-connection-status.png"/>
 
 > [!TIP]
-> GitHub uses the [universal](https://github.com/devcontainers/images/tree/main/src/universal) Codespace image if the repository doesn't include a configuration. It includes several useful and commonly used tools.
+> GitHub usa la imagen de Codespace [universal](https://github.com/devcontainers/images/tree/main/src/universal) si el repository no incluye una configuración. Incluye varias herramientas útiles y comúnmente usadas.
 
-### ⌨️ Activity: Run the application
+### ⌨️ Actividad: Ejecutar la aplicación
 
-1. Ensure you are in the VS Code Codespace.
+1. Asegurarse de estar en el Codespace de VS Code.
 
-1. In the left sidebar, select the file **Explorer** tab and open the file `src/hello.py`.
+1. En la barra lateral izquierda, seleccionar la pestaña **Explorer** (Explorador) y abrir el archivo `src/hello.py`.
 
    <img width="250" alt="vs code explorer tab" src="../images/vs-code-explorer-tab.png" />
 
-1. In the lower panel, select the **TERMINAL** tab.
+1. En el panel inferior, seleccionar la pestaña **TERMINAL**.
 
    <img width="350" alt="vs code terminal tab" src="../images/vs-code-terminal-tab.png" />
 
-1. Paste the following command in the Codespace's remote terminal to show the installed versions of several tools. Note the versions for comparison later.
+1. Pegar el siguiente comando en el terminal remoto del Codespace para mostrar las versiones instaladas de varias herramientas. Anotar las versiones para comparar más adelante.
 
    ```bash
    node --version
@@ -65,21 +65,21 @@ Let's get started! We'll start up a Codespace, run the application, make a chang
    gh --version
    ```
 
-1. Paste the following command to run the Python program in the Codespace's remote terminal.
+1. Pegar el siguiente comando para ejecutar el programa Python en el terminal remoto del Codespace.
 
    ```bash
    python src/hello.py
    ```
 
-### ⌨️ Activity: Push changes to your repository from the codespace
+### ⌨️ Actividad: Enviar cambios al repository desde el codespace
 
-1. Replace the `src/hello.py` file contents with the following and save the file.
+1. Reemplazar el contenido del archivo `src/hello.py` con lo siguiente y guardar el archivo.
 
    ```py
    print("Hello World!")
    ```
 
-1. With the message updated, commit the change and push it to GitHub. Use VS Code's source control tools or the below terminal commands.
+1. Con el mensaje actualizado, hacer commit del cambio y enviarlo a GitHub. Usar las herramientas de control de código de VS Code o los siguientes comandos de terminal.
 
    ```bash
    git add 'src/hello.py'
@@ -87,6 +87,6 @@ Let's get started! We'll start up a Codespace, run the application, make a chang
    git push
    ```
 
-1. (optional) Back in your web browser, open the `src/hello.py` file to to verify the change was updated.
+1. (opcional) De vuelta en el navegador web, abrir el archivo `src/hello.py` para verificar que el cambio fue actualizado.
 
-1. With the the change pushed to GitHub, Mona will begin checking your work. Give her a moment to provide feedback and the next learning steps.
+1. Con el cambio enviado a GitHub, Mona comenzará a revisar el trabajo. Darle un momento para proporcionar retroalimentación y los siguientes pasos de aprendizaje.

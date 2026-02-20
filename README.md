@@ -22,7 +22,7 @@ En este ejercicio, se realizará lo siguiente:
 
 Simplemente copiar el ejercicio a tu cuenta, luego darle a tu Octocat favorito (Mona) **unos 20 segundos** para preparar la primera lección, después **refrescar la página**.
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=ARQSW1&template_name=code-with-codespaces&owner=%40me&name=unahur-code-with-codespaces&description=Ejercicio:+Programando+con+Codespaces&visibility=public)
+[![](https://img.shields.io/badge/Copiar%20Ejercicio-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=UNAHUR-GH-2026&template_name=code-with-codespaces&owner=%40me&name=unahur-code-with-codespaces&description=Ejercicio:+Programando+con+Codespaces&visibility=public)
 
 <details>
 <summary>¿Problemas? 🤷</summary><br/>
